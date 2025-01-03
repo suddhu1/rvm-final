@@ -1,0 +1,67 @@
+/* Header Styles - header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2e8b57; /* Eco-friendly green color */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #a8e6a3; /* Light green hover effect */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.login-button:hover {
+  background-color: white;
+  color: #2e8b57;
+}
+
+.signup-button {
+  background-color: #a8e6a3;
+  color: #2e8b57;
+}
+
+.signup-button:hover {
+  background-color: white;
+  color: #2e8b57;
+}

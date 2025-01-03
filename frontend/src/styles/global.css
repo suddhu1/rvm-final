@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+/* src/styles/global.css */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #4caf50; /* Eco-friendly color */
+}
+
+/* src/styles/ecoStyle.css */
+.eco-heading {
+  color: #2d6a4f;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* src/styles/animations.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}

@@ -1,0 +1,57 @@
+/* src/styles/ecoStyle.css */
+
+/* Ensures the map takes the available height without touching the navbar */
+.machine-locator-container {
+  padding: 2rem;
+  background-color: #f0f8ff; /* Soft, eco-friendly color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow: hidden;
+}
+
+.eco-heading {
+  font-size: 2rem;
+  text-align: center;
+  color: #2d6a4f;
+  margin-bottom: 1rem;
+}
+
+.map-container {
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
