@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-const bcrypt = require("bcrypt")
 
 const userSchema = new mongoose.Schema(
   {
@@ -24,17 +23,10 @@ const userSchema = new mongoose.Schema(
   { collection: "EcoVend" } // Explicitly set the collection name
 )
 
-// Hash password before saving
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next()
-  const salt = await bcrypt.genSalt(10)
-  this.password = await bcrypt.hash(this.password, salt)
-  next()
-})
-
-// Add a method to compare passwords
-userSchema.methods.matchPassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password)
-}
+// No need for a pre-save hook for hashing
+// Remove the password comparison method if not needed
+// userSchema.methods.matchPassword = async function (enteredPassword) {
+//   return enteredPassword === this.password;
+// }
 
 module.exports = mongoose.model("User", userSchema, "Users")
