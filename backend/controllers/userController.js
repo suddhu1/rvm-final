@@ -15,6 +15,8 @@ const getDashboardData = async (req, res) => {
       name: user.name,
       email: user.email,
       verificationCode: user.verificationCode,
+      totalBottles: user.totalBottles || 0,
+      lastDepositLocation: user.lastDepositLocation || "Not available",
     })
   } catch (error) {
     console.error(error)

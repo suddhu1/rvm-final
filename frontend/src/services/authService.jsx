@@ -9,7 +9,10 @@ export const loginUser = async ({ email, password }) => {
       email,
       password,
     })
-
+    const { token } = response.data
+    if (token) {
+      localStorage.setItem("token", token)
+    }
     // If login is successful, return user data
     return response.data
   } catch (error) {

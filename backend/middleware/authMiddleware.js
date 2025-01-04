@@ -15,7 +15,9 @@ const protect = (req, res, next) => {
 
       // Verify token
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
-
+      if (!decoded) {
+        throw new Error("Token verification failed")
+      }
       // Attach user ID to the request object
       req.user = decoded
       next() // Proceed to the next middleware or route handler

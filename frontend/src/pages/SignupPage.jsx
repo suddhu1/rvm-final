@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { signupUser } from "../services/authService"
 import "../styles/global.css"
+import "../styles/signup.css"
 
 const SignupPage = () => {
   const [name, setName] = useState("") // Add state for the user's name

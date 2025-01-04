@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import { useNavigate } from "react-router-dom" // Replace useHistory with useNavigate
 import { loginUser } from "../services/authService" // Import login service
 import "../styles/global.css" // Global styles
+import "../styles/login.css" // Local styles
 
 const LoginPage = () => {
   const [email, setEmail] = useState("")

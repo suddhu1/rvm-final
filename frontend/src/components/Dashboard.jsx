@@ -2,7 +2,9 @@
 
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { getUserData, logoutUser } from "../services/authService" // Import services
+import { logoutUser } from "../services/authService" // Import logout service
+import fetchDashboardData from "../services/userService" // Import dashboard data fetch service
+
 import "../styles/global.css" // Import global styles
 import "../styles/ecoStyle.css" // Import eco-friendly specific styles
 import "../styles/animations.css" // Import animations
@@ -10,13 +12,13 @@ import "../styles/animations.css" // Import animations
 const Dashboard = () => {
   const [userData, setUserData] = useState(null)
   const [errorMessage, setErrorMessage] = useState("")
-  const navigate = useNavigate() // Replaces useHistory
+  const navigate = useNavigate()
 
   // Fetch user data when the page loads
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const data = await getUserData() // Call the service to get user data
+        const data = await fetchDashboardData() // Call the service to get user data
         setUserData(data)
       } catch (error) {
         setErrorMessage("Failed to load user data. Please try again.")
@@ -39,9 +41,17 @@ const Dashboard = () => {
 
       {userData ? (
         <>
+          {/* User Info Section */}
           <div className="user-info slide-in">
             <p>
+              <strong>Name:</strong> {userData?.name || "Not available"}
+            </p>
+            <p>
               <strong>Email:</strong> {userData?.email || "Not available"}
+            </p>
+            <p>
+              <strong>Verification Code:</strong>{" "}
+              {userData?.verificationCode || "Not available"}
             </p>
             <p>
               <strong>Total Bottles Deposited:</strong>{" "}
@@ -53,27 +63,29 @@ const Dashboard = () => {
             </p>
           </div>
 
+          {/* Deposit History Section */}
           <div className="deposit-history slide-in">
             <h2>Recent Deposits</h2>
-            <ul>
-              {userData?.recentDeposits?.length > 0 ? (
-                userData.recentDeposits.map((deposit, index) => (
-                  <li key={index}>
+            {userData?.recentDeposits?.length > 0 ? (
+              <ul>
+                {userData.recentDeposits.map((deposit, index) => (
+                  <li key={index} className="deposit-item">
                     <p>
                       <strong>Machine Location:</strong>{" "}
-                      {deposit.machineLocation}
+                      {deposit.machineLocation || "Not available"}
                     </p>
                     <p>
-                      <strong>Date:</strong> {deposit.date}
+                      <strong>Date:</strong> {deposit.date || "Not available"}
                     </p>
                   </li>
-                ))
-              ) : (
-                <p>No recent deposits.</p>
-              )}
-            </ul>
+                ))}
+              </ul>
+            ) : (
+              <p>No recent deposits.</p>
+            )}
           </div>
 
+          {/* Logout Button */}
           <button onClick={handleLogout} className="logout-btn">
             Logout
           </button>
