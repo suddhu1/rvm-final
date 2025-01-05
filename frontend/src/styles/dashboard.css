@@ -1,0 +1,140 @@
+/* dashboard.css */
+
+/* General Container Styles */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading Styles */
+.eco-heading {
+  font-size: 2rem;
+  color: #388e3c;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Error Message Styles */
+.error-message {
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* User Info Section */
+.user-info {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
+}
+
+.user-info p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #333;
+}
+
+.user-info strong {
+  color: #388e3c;
+}
+
+/* Deposit History Section */
+.deposit-history {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
+}
+
+.deposit-history h2 {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.deposit-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.deposit-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f1f8e9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.deposit-item:hover {
+  transform: translateY(-5px);
+  background: #dcedc8;
+}
+
+.deposit-item p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.deposit-item strong {
+  color: #388e3c;
+}
+
+/* Logout Button */
+.logout-btn {
+  padding: 10px 20px;
+  background: #d32f2f;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.logout-btn:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

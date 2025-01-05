@@ -1,0 +1,101 @@
+/* voucherStyle.css */
+
+/* Main container for the voucher cards */
+.voucher-container {
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); Ensure 3 cards per row */
+  gap: 30px;
+  padding: 40px;
+  background: linear-gradient(135deg, #f6f9fc, #e9eff6);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual card styling */
+.voucher-card {
+  background: linear-gradient(145deg, #ffffff, #f0f3f7);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 8px rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Card hover effect */
+.voucher-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Voucher title */
+.voucher-card h3 {
+  font-size: 1.8rem;
+  color: #333333;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Points text */
+.voucher-card p {
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Redeem button */
+.voucher-card button {
+  background: linear-gradient(145deg, #28a745, #218838);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  
+    /* Add a subtle shadow to the button */
+    box-shadow: rgba(0,0,0,.2) -2px -2px; 
+    transition: background-color .3s ease-in-out,
+                transform .3s ease-in-out,
+                box-shadow .3s ease-in-out; 
+}
+
+.voucher-card button:hover {
+    background-color:#218838; 
+    transform: translateY(-3px);
+    box-shadow: rgba(0,0,0,.25) -2px -2px; 
+}
+
+.voucher-card button:active {
+    transform: translateY(1px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width:768px) {
+    .voucher-container {
+        grid-template-columns: repeat(1,1fr); /* Stack cards on small screens */
+        gap:20px; 
+    }
+}
+.vouchers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px; /* Spacing between cards */
+  justify-content: center; /* Center grid content */
+  align-items: start; /* Align items at the top */
+}
+ .vouchers-container h2{
+  text-align: center;
+  position: relative;
+
+ }
+ .hello{
+  position: relative;
+  top: -10px;
+  text-decoration: brown;
+  color: white;
+  background-color: #28a745;
+  border-radius: 10%;
+ }

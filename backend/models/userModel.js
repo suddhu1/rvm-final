@@ -19,9 +19,25 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    bottlesDeposited: {
+      type: Number,
+      default: 0,
+    },
+    cansDeposited: {
+      type: Number,
+      default: 0,
+    },
+    points: {
+      type: Number,
+      default: 0,
+    },
+    totalMoneyWithdrawn: {
+      type: Number,
+      default: 0, // User starts with 0 money withdrawn
+    },
   },
   { collection: "EcoVend" } // Explicitly set the collection name
-)
+);
 
 // No need for a pre-save hook for hashing
 // Remove the password comparison method if not needed

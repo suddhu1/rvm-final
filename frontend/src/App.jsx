@@ -1,14 +1,14 @@
 // src/App.jsx
 
-import React from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom" // Use Routes instead of Switch
-import Header from "./components/Header"
-import HomePage from "./pages/HomePage"
-import SignupPage from "./pages/SignupPage"
-import LoginPage from "./pages/LoginPage" // Import LoginPage
-import MachineLocator from "./components/MachineLocator"
-import Dashboard from "./components/Dashboard"
-import "leaflet/dist/leaflet.css" // Import Leaflet CSS
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Use Routes instead of Switch
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage"; // Import LoginPage
+import MachineLocator from "./components/MachineLocator";
+import Dashboard from "./components/Dashboard";
+import "leaflet/dist/leaflet.css"; // Import Leaflet CSS
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <Route path="/machine-locator" element={<MachineLocator />} />
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -21,4 +21,25 @@ const fetchDashboardData = async () => {
   }
 }
 
+// Withdraw points service
+export const withdrawPoints = async (pointsToWithdraw) => {
+  try {
+    const token = localStorage.getItem("token");
+    console.log("Sending withdrawal request:", pointsToWithdraw); // Log request data
+    const response = await axios.post(
+      "http://localhost:5000/api/user/withdraw",
+      { pointsToWithdraw },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to withdraw points:", error);
+    throw error.response?.data || error.message;
+  }
+};
+
 export default fetchDashboardData
