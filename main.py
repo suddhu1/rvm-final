@@ -5,9 +5,9 @@ import time
 from machine import Pin
 
 # Configuration
-SSID = "Kings College"
-PASSWORD = "Empowerment"
-SERVER_URL = "http://172.16.0.190:5000"
+SSID = "wifissid"
+PASSWORD = "password"
+SERVER_URL = "Url of thr device where the backend id running"
 
 # Sensor pins
 trig = Pin(12, Pin.OUT)  # Ultrasonic sensor trigger pin
